@@ -1,0 +1,20 @@
+# Build outputs
+bin/
+obj/
+release/
+
+# App bundles copied in for local packaging
+dist/
+
+# Legacy project-specific leftovers
+README-start.md
+start-visual-story-editor.bat
+CSharp-dist-exe-flow.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.user
+*.suo
