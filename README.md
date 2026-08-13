@@ -1,64 +1,111 @@
-# Dist Desktop Launcher
+﻿# Dist Desktop Launcher
 
-一个把前端 `dist` 静态构建目录打包成 Windows 桌面启动器的小工具。它会把 `dist/` 中的文件嵌入到一个 .NET 单文件程序里，启动后在本机开启轻量静态服务，并自动打开浏览器访问应用。
+> Package any frontend dist folder into a self-contained Windows desktop launcher.  
+> 中文：把任意前端 dist 静态目录打包成可双击运行的 Windows 桌面启动器。
 
-## 适合用来做什么
+This repository is packaged to be easy to **star, fork, run, remix, and contribute to**. It keeps the first screen English-first for global GitHub discovery, while preserving a Chinese guide below.
 
-- 把 Vite、Vue、React、Svelte 等前端项目的 `dist` 交给非技术用户双击运行。
-- 给纯前端工具做一个简单的 Windows 启动壳。
-- 在没有 Node.js 环境的电脑上分发静态 Web 应用。
+## Why Star This
 
-## 项目结构
+- Practical project idea with a clear real-world use case.
+- Small enough to fork, study, and customize quickly.
+- English-first bilingual README for both global and Chinese-speaking developers.
+- Clean setup instructions, project structure, roadmap, and contribution entry points.
+- Built around popular GitHub themes such as AI tools, TypeScript, developer tools, local-first apps, automation, and indie-friendly workflows when relevant.
 
-```text
+## What It Does
+
+Package any frontend dist folder into a self-contained Windows desktop launcher.
+
+## Highlights
+
+- Embeds static dist assets into a Windows executable
+- Starts a lightweight local web server automatically
+- Opens the browser to the packaged app
+- SPA fallback support for frontend routes
+- Useful for Vue, React, Svelte, and Vite tools
+
+## Tech Stack
+
+`	ext
+C#, .NET, Windows, static web hosting
+`
+
+## Quick Start
+
+`ash
+dotnet restore`n# Put your frontend build into ./dist first`nbuild-exe.bat
+`
+
+## Project Structure
+
+`	ext
 .
-├─ DistLauncher.csproj
-├─ Program.cs
-├─ build-exe.bat
-├─ start-dist-launcher.bat
-└─ dist/                     # 待打包的前端构建产物，本仓库默认不提交
-```
+|-- src/ or app/          Main source code
+|-- public/ or assets/    Static assets when available
+|-- docs/                 Notes, specs, or deployment docs when available
+|-- README.md             English-first bilingual project guide
+-- package / project files
+`
 
-## 使用方式
+## Deployment / Packaging
 
-1. 先在你的前端项目里构建：
+- Do not commit generated builds, local databases, API keys, private logs, or large media files.
+- For frontend projects, deploy the production dist/ folder to GitHub Pages, Vercel, Netlify, Nginx, or package it with DistDesktopLauncher.
+- For desktop/mobile projects, publish only release artifacts from a clean build environment.
+- Keep configuration examples public and real credentials private.
 
-```bash
-npm install
-npm run build
-```
+## Roadmap
 
-2. 把生成的 `dist` 文件夹复制到本项目根目录。
-3. 安装 .NET SDK 8.0 或更高版本。
-4. 在 Windows 上运行：
+- [ ] Tray icon mode
+- [ ] Custom icon and app metadata wizard
+- [ ] Release zip generation
+- [ ] macOS/Linux equivalents
 
-```bat
-build-exe.bat
-```
+## Contributing
 
-5. 发布结果会出现在 `release/`：
+Issues and pull requests are welcome. Useful contributions include better screenshots, demos, docs, templates, presets, provider guides, compatibility fixes, tests, and translations.
 
-```text
-release/
-├─ DistDesktopLauncher.exe
-└─ start-dist-launcher.bat
-```
+If this project helps you, a star and fork make it easier for more people to discover it.
 
-把 `release` 文件夹发给用户即可。用户双击 `start-dist-launcher.bat`，浏览器会自动打开本地地址。
+---
 
-## 部署说明
+# 中文说明
 
-本项目面向 Windows 桌面分发，不需要服务器部署。构建出的 `DistDesktopLauncher.exe` 是自包含单文件程序，目标机器不需要安装 Node.js，也不需要保留源码。
+> 把任意前端 dist 静态目录打包成可双击运行的 Windows 桌面启动器。
 
-如果你要换一个前端应用，只需要替换根目录的 `dist/` 后重新运行 `build-exe.bat`。
+这个仓库已经改成 **英文优先、中文在后** 的双语 README，方便 GitHub 全球用户第一眼理解项目，同时保留中文开发者阅读体验。
 
-## 注意事项
+## 为什么值得 Star / Fork
 
-- `dist/`、`bin/`、`obj/`、`release/` 都是构建或打包产物，不提交到 GitHub。
-- 默认从 `5123` 端口开始寻找可用端口，如果端口被占用会自动尝试后续端口。
-- 支持 SPA 深链接回退：找不到静态文件时会返回 `dist/index.html`。
-- 可设置环境变量 `DIST_LAUNCHER_APP_NAME` 改变控制台窗口名称。
+- 目标场景清晰，不是空壳项目。
+- 项目规模适合学习、二次开发和快速改造。
+- README、路线图、贡献入口和部署说明更完整。
+- topics 会尽量贴近当前 GitHub 热门方向，例如 AI、LLM、OpenAI-compatible、TypeScript、developer-tools、automation、local-first、gamedev 等。
 
-## 感谢与支持
+## 功能亮点
 
-感谢你愿意看到这里。这个小工具来自一次次把前端作品交到别人手里时的真实需求：希望作品不只是能跑，还能更体面、更容易被打开。如果它帮到了你，欢迎点一个 Star、Fork 或提出建议，你的支持会让我更有动力继续把这些小工具打磨好。
+- Embeds static dist assets into a Windows executable
+- Starts a lightweight local web server automatically
+- Opens the browser to the packaged app
+- SPA fallback support for frontend routes
+- Useful for Vue, React, Svelte, and Vite tools
+
+## 快速开始
+
+`ash
+dotnet restore`n# Put your frontend build into ./dist first`nbuild-exe.bat
+`
+
+## 部署与安全
+
+- 不要提交 .env、API Key、生成媒体、大型文件、数据库、日志和构建产物。
+- 前端项目可以部署 dist/ 到 GitHub Pages、Vercel、Netlify 或 Nginx。
+- 桌面/移动端项目建议只发布干净环境构建出来的 release 文件。
+
+## 后续计划
+
+- [ ] Tray icon mode
+- [ ] Custom icon and app metadata wizard
+- [ ] Release zip generation
+- [ ] macOS/Linux equivalents
