@@ -1,74 +1,53 @@
-﻿# Dist Desktop Launcher
+# Dist Desktop Launcher
 
 [中文说明](./README.cn.md)
 
-> Package any frontend dist folder into a self-contained Windows desktop launcher.  
+> Tiny Windows launcher that serves a packaged static dist folder with SPA fallback and self-test support.
 
-This repository is packaged to be easy to **star, fork, run, remix, and contribute to**. It keeps a dedicated English version for global GitHub discovery, with a separate Chinese version linked above.
+![csharp](https://img.shields.io/badge/csharp-111827?style=flat-square) ![dotnet](https://img.shields.io/badge/dotnet-111827?style=flat-square) ![desktop-app](https://img.shields.io/badge/desktop-app-111827?style=flat-square) ![static-server](https://img.shields.io/badge/static-server-111827?style=flat-square) ![packaging](https://img.shields.io/badge/packaging-111827?style=flat-square)
 
-## Why Star This
+## Showcase
 
-- Practical project idea with a clear real-world use case.
-- Small enough to fork, study, and customize quickly.
-- English-first bilingual README for both global and Chinese-speaking developers.
-- Clean setup instructions, project structure, roadmap, and contribution entry points.
-- Built around popular GitHub themes such as AI tools, TypeScript, developer tools, local-first apps, automation, and indie-friendly workflows when relevant.
-
-## What It Does
-
-Package any frontend dist folder into a self-contained Windows desktop launcher.
+![Dist Desktop Launcher showcase](./docs/images/github-showcase.png)
 
 ## Highlights
 
-- Embeds static dist assets into a Windows executable
-- Starts a lightweight local web server automatically
-- Opens the browser to the packaged app
-- SPA fallback support for frontend routes
-- Useful for Vue, React, Svelte, and Vite tools
-
-## Tech Stack
-
-`	ext
-C#, .NET, Windows, static web hosting
-`
+- csharp
+- dotnet
+- desktop app
+- static server
+- packaging
+- Practical project structure for learning, demos, and remixing.
+- Local-first setup where secrets, generated files, and build output stay out of Git.
 
 ## Quick Start
 
-`ash
-dotnet restore`n# Put your frontend build into ./dist first`nbuild-exe.bat
-`
+```bash
+dotnet build
+dotnet run -- --self-test
+```
 
 ## Project Structure
 
-`	ext
+```text
 .
 |-- src/ or app/          Main source code
 |-- public/ or assets/    Static assets when available
-|-- docs/                 Notes, specs, or deployment docs when available
-|-- README.md             English-first bilingual project guide
--- package / project files
-`
-
-## Deployment / Packaging
-
-- Do not commit generated builds, local databases, API keys, private logs, or large media files.
-- For frontend projects, deploy the production dist/ folder to GitHub Pages, Vercel, Netlify, Nginx, or package it with DistDesktopLauncher.
-- For desktop/mobile projects, publish only release artifacts from a clean build environment.
-- Keep configuration examples public and real credentials private.
+|-- docs/                 Screenshots, notes, or deployment docs
+|-- README.md             GitHub landing README
+|-- README.en.md          English documentation
+`-- README.cn.md          Chinese documentation
+```
 
 ## Roadmap
 
-- [ ] Tray icon mode
-- [ ] Custom icon and app metadata wizard
-- [ ] Release zip generation
-- [ ] macOS/Linux equivalents
+- [ ] Add more real-world examples and screenshots.
+- [ ] Expand tests or smoke checks for the primary workflow.
+- [ ] Publish clean release artifacts where the project type supports it.
+- [ ] Keep documentation friendly for new contributors.
 
 ## Contributing
 
-Issues and pull requests are welcome. Useful contributions include better screenshots, demos, docs, templates, presets, provider guides, compatibility fixes, tests, and translations.
+Issues and pull requests are welcome. Useful contributions include screenshots, demos, docs, templates, presets, compatibility fixes, tests, and translations.
 
 If this project helps you, a star and fork make it easier for more people to discover it.
-
-
-
-
