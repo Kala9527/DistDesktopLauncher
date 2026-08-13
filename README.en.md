@@ -1,58 +1,74 @@
-# Dist Desktop Launcher
+﻿# Dist Desktop Launcher
 
-A small Windows desktop launcher that packages a frontend `dist` folder into a self-contained .NET executable. It embeds static files, starts a lightweight local server, and opens the app in the browser.
+[中文说明](./README.cn.md)
 
-## What It Is For
+> Package any frontend dist folder into a self-contained Windows desktop launcher.  
 
-- Ship Vite, Vue, React, Svelte, or other static frontend builds to non-technical users.
-- Give a pure frontend tool a simple Windows launch experience.
-- Run static web apps on machines without Node.js.
+This repository is packaged to be easy to **star, fork, run, remix, and contribute to**. It keeps a dedicated English version for global GitHub discovery, with a separate Chinese version linked above.
 
-## Structure
+## Why Star This
 
-```text
+- Practical project idea with a clear real-world use case.
+- Small enough to fork, study, and customize quickly.
+- English-first bilingual README for both global and Chinese-speaking developers.
+- Clean setup instructions, project structure, roadmap, and contribution entry points.
+- Built around popular GitHub themes such as AI tools, TypeScript, developer tools, local-first apps, automation, and indie-friendly workflows when relevant.
+
+## What It Does
+
+Package any frontend dist folder into a self-contained Windows desktop launcher.
+
+## Highlights
+
+- Embeds static dist assets into a Windows executable
+- Starts a lightweight local web server automatically
+- Opens the browser to the packaged app
+- SPA fallback support for frontend routes
+- Useful for Vue, React, Svelte, and Vite tools
+
+## Tech Stack
+
+`	ext
+C#, .NET, Windows, static web hosting
+`
+
+## Quick Start
+
+`ash
+dotnet restore`n# Put your frontend build into ./dist first`nbuild-exe.bat
+`
+
+## Project Structure
+
+`	ext
 .
-├─ DistLauncher.csproj
-├─ Program.cs
-├─ build-exe.bat
-├─ start-dist-launcher.bat
-└─ dist/                     # Local build input, ignored by Git
-```
+|-- src/ or app/          Main source code
+|-- public/ or assets/    Static assets when available
+|-- docs/                 Notes, specs, or deployment docs when available
+|-- README.md             English-first bilingual project guide
+-- package / project files
+`
 
-## Build And Deploy
+## Deployment / Packaging
 
-1. Build your frontend app:
+- Do not commit generated builds, local databases, API keys, private logs, or large media files.
+- For frontend projects, deploy the production dist/ folder to GitHub Pages, Vercel, Netlify, Nginx, or package it with DistDesktopLauncher.
+- For desktop/mobile projects, publish only release artifacts from a clean build environment.
+- Keep configuration examples public and real credentials private.
 
-```bash
-npm install
-npm run build
-```
+## Roadmap
 
-2. Copy the generated `dist` folder into this project root.
-3. Install .NET SDK 8.0 or later.
-4. Run on Windows:
+- [ ] Tray icon mode
+- [ ] Custom icon and app metadata wizard
+- [ ] Release zip generation
+- [ ] macOS/Linux equivalents
 
-```bat
-build-exe.bat
-```
+## Contributing
 
-The packaged files are written to `release/`:
+Issues and pull requests are welcome. Useful contributions include better screenshots, demos, docs, templates, presets, provider guides, compatibility fixes, tests, and translations.
 
-```text
-release/
-├─ DistDesktopLauncher.exe
-└─ start-dist-launcher.bat
-```
+If this project helps you, a star and fork make it easier for more people to discover it.
 
-Send the `release` folder to users. They can double-click `start-dist-launcher.bat` to launch the app.
 
-## Notes
 
-- `dist/`, `bin/`, `obj/`, and `release/` are generated files and are not committed.
-- The launcher starts at port `5123` and automatically tries later ports if needed.
-- SPA deep links fall back to `dist/index.html`.
-- Set `DIST_LAUNCHER_APP_NAME` to customize the console title.
 
-## Thanks
-
-Thank you for checking out this project. It was made to help frontend work feel easier to share and nicer to open. If it helps you, a Star, Fork, issue, or kind suggestion would mean a lot and will encourage me to keep improving it.
